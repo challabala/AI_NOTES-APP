@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: 'https://ai-notes-app-f6g5.onrender.com',
     withCredentials: true, // sending cookies
 });
 
