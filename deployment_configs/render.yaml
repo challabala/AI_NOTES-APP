@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ai-study-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+        fromGroup: study-app-secrets
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: AI_API_KEY
+        fromGroup: study-app-secrets
+      - key: CLIENT_URL
+        value: https://your-frontend.vercel.app
